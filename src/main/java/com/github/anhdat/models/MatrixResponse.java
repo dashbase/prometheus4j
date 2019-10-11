@@ -7,12 +7,66 @@ public class MatrixResponse {
     String status;
     MatrixData data;
 
-    static class MatrixData {
-        String resultType;
-        List<MatrixResult> results;
+    public String status() {
+        return this.status;
     }
 
-    static class MatrixResult {
+    public MatrixResponse status(String status) {
+        this.status = status;
+        return this;
+    }
+
+    public MatrixData data() {
+        return this.data;
+    }
+
+    public MatrixResponse data(MatrixData data) {
+        this.data = data;
+        return this;
+    }
+
+    public class MatrixData {
+        public String resultType() {
+            return this.resultType;
+        }
+
+        public MatrixData resultType(String resultType) {
+            this.resultType = resultType;
+            return this;
+        }
+
+        public List<MatrixResult> result() {
+            return this.result;
+        }
+
+        public MatrixData result(List<MatrixResult> result) {
+            this.result = result;
+            return this;
+        }
+
+        String resultType;
+        List<MatrixResult> result;
+    }
+
+    public class MatrixResult {
+        public Map<String, String> metric() {
+            return this.metric;
+        }
+
+        public MatrixResult metric(Map<String, String> metric) {
+            this.metric = metric;
+            return this;
+        }
+
+        public List<List<Float>> values() {
+            return this.values;
+        }
+
+        public MatrixResult values(List<List<Float>> values) {
+            this.values = values;
+            return this;
+        }
+
         Map<String, String> metric;
         List<List<Float>> values;
 

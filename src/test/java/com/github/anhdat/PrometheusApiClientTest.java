@@ -23,37 +23,37 @@ public class PrometheusApiClientTest {
 
     @Test
     public void testQuery() throws IOException {
-        VectorResponse response = client.query("go_gc_duration_seconds");
+        VectorResponse response = client.query("go_gc_duration_seconds").body();
         System.out.println("response = " + response);
     }
 
     @Test
     public void testQueryWithTime() throws IOException {
-        VectorResponse response = client.query("go_gc_duration_seconds", "2018-06-01T20:10:51.781Z");
+        VectorResponse response = client.query("go_gc_duration_seconds", "2018-06-01T20:10:51.781Z").body();
         System.out.println("response = " + response);
     }
 
     @Test
     public void testQueryWithTimestamp() throws IOException {
-        VectorResponse response = client.query("go_gc_duration_seconds", tenMinEarlier.toString());
+        VectorResponse response = client.query("go_gc_duration_seconds", tenMinEarlier.toString()).body();
         System.out.println("response = " + response);
     }
 
     @Test
     public void testQueryWithTimeout() throws IOException {
-        VectorResponse response = client.query("go_gc_duration_seconds", "", "1ms");
+        VectorResponse response = client.query("go_gc_duration_seconds", "", "1ms").body();
         System.out.println("response = " + response);
     }
 
     @Test
     public void testQueryRange() throws IOException {
-        MatrixResponse response = client.queryRange("go_gc_duration_seconds", tenMinEarlier.toString(), now.toString(), "5m", "");
+        MatrixResponse response = client.queryRange("go_gc_duration_seconds", tenMinEarlier.toString(), now.toString(), "5m", "").body();
         System.out.println("response = " + response);
     }
 
     @Test
     public void testFindSeries() throws IOException {
-        KeyValResponse response = client.findSeries("up", tenMinEarlier.toString(), now.toString());
+        KeyValResponse response = client.findSeries("up", tenMinEarlier.toString(), now.toString()).body();
         System.out.println("response = " + response);
     }
 }

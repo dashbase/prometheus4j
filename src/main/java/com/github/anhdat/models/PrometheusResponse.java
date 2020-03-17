@@ -8,8 +8,8 @@ import java.util.stream.Collectors;
  * @author dat.truonganh
  */
 public class PrometheusResponse {
-    String status;
-    Data data;
+    public String status;
+    public Data data;
 
     @Override
     public String toString() {
@@ -17,9 +17,9 @@ public class PrometheusResponse {
     }
 
     class ResultItem {
-        Map<String, String> metric;
-        List<Float> value;
-        List<List<Float>> values;
+        public Map<String, String> metric;
+        public List<Double> value;
+        public List<List<Double>> values;
 
         @Override
         public String toString() {
@@ -33,8 +33,8 @@ public class PrometheusResponse {
     }
 
     class Data {
-        String resultType;
-        List<ResultItem> result;
+        public String resultType;
+        public List<ResultItem> result;
 
         @Override
         public String toString() {

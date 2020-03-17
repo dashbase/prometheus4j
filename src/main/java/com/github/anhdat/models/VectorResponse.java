@@ -22,8 +22,8 @@ public class VectorResponse {
         return this;
     }
 
-    String status;
-    VectorData data;
+    public String status;
+    public VectorData data;
 
     public class VectorResult {
         public Map<String, String> metric() {
@@ -35,17 +35,17 @@ public class VectorResponse {
             return this;
         }
 
-        public List<Float> value() {
+        public List<Double> value() {
             return this.value;
         }
 
-        public VectorResult value(List<Float> value) {
+        public VectorResult value(List<Double> value) {
             this.value = value;
             return this;
         }
 
-        Map<String, String> metric;
-        List<Float> value;
+        public Map<String, String> metric;
+        public List<Double> value;
 
         @Override
         public String toString() {
@@ -76,7 +76,7 @@ public class VectorResponse {
             return this;
         }
 
-        String resultType;
-        List<VectorResult> result;
+        public String resultType;
+        public List<VectorResult> result;
     }
 }

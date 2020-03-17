@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.Map;
 
 public class MatrixResponse {
-    String status;
-    MatrixData data;
+    public String status;
+    public MatrixData data;
 
     public String status() {
         return this.status;
@@ -44,8 +44,8 @@ public class MatrixResponse {
             return this;
         }
 
-        String resultType;
-        List<MatrixResult> result;
+        public String resultType;
+        public List<MatrixResult> result;
     }
 
     public class MatrixResult {
@@ -58,17 +58,17 @@ public class MatrixResponse {
             return this;
         }
 
-        public List<List<Float>> values() {
+        public List<List<Double>> values() {
             return this.values;
         }
 
-        public MatrixResult values(List<List<Float>> values) {
+        public MatrixResult values(List<List<Double>> values) {
             this.values = values;
             return this;
         }
 
-        Map<String, String> metric;
-        List<List<Float>> values;
+        public Map<String, String> metric;
+        public List<List<Double>> values;
 
         @Override
         public String toString() {

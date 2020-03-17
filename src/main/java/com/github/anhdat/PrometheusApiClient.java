@@ -2,7 +2,6 @@ package com.github.anhdat;
 
 import com.github.anhdat.models.KeyValResponse;
 import com.github.anhdat.models.MatrixResponse;
-import com.github.anhdat.models.PrometheusResponse;
 import com.github.anhdat.models.VectorResponse;
 import retrofit2.Response;
 import retrofit2.Retrofit;
